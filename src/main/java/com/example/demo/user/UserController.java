@@ -15,13 +15,13 @@ public class UserController {
         return "post";
     }
 
-    @PutMapping
-    public String updateUser() {
-        return "put";
+    @PutMapping("/{userId}")
+    public String updateUser(@PathVariable Long userId) {
+        return "put " + userId;
     }
 
-    @DeleteMapping
-    public String deleteUser() {
-        return "string";
+    @DeleteMapping("/{userId}")
+    public String deleteUser(@PathVariable Long userId) {
+        return "delete " + userId;
     }
 }
